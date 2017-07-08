@@ -1,0 +1,105 @@
+<style type="text/css">
+	.box{
+		height: 350px;
+	}
+	.first-left{
+		background-color: #f0e3f1;
+	    text-align: center;
+	    padding-top: 125px;
+      -moz-transition: all 0.4s;
+      -webkit-transition: all 0.4s;
+      transition: all 0.4s;
+	}
+	.first-left:hover{
+		opacity: 0.6;
+	}
+	.second-right{
+		background-color: #fff2e8;
+	    text-align: center;
+	    padding-top: 125px;
+      -moz-transition: all 0.4s;
+      -webkit-transition: all 0.4s;
+      transition: all 0.4s;
+	}
+	.second-right:hover{
+		opacity: 0.6;
+	}
+	.first-right{
+		padding: 0px;
+	}
+	.second-left{
+		padding: 0px;
+	}
+	.first-right img{
+		width: 100%;
+		height: auto;
+		min-height: 350px;
+	}
+	.second-left img{
+		width: 100%;
+		height: auto;
+		min-height: 350px;
+	}
+	.bottom-row{
+		margin-top: 50px;
+	}
+	.third-left{
+		background-color: #ffe0e3 !important;
+	}
+	.fourth-right{
+		background-color: #e5d8e1 !important;
+	}
+</style>
+<div class="container-fluid" data-no-turbolinks="true">
+	<div class="row">
+		<a href="/videos"><div class="col-md-6 first-left box">
+			<h1 class="video-header">Videos</h1>
+		</div></a>
+		<div class="col-md-6 first-right box">
+			<%= image_tag('cat1', class: "img-fluid") %>
+		</div>
+	</div>
+	<div class="row bottom-row">
+		<div class="col-md-6 second-left box">
+			<%= image_tag('cat2', class: "img-fluid") %>
+		</div>
+		<a href="/gallery"><div class="col-md-6 second-right box">
+			<h1 class="video-header">Gallery</h1>
+		</div></a>
+	</div>
+	<div class="row bottom-row">
+		<a href="/shop"><div class="col-md-6 first-left third-left box">
+			<h1 class="video-header">Shop</h1>
+		</div></a>
+		<div class="col-md-6 first-right box">
+			<%= image_tag('cat1', class: "img-fluid") %>
+		</div>
+	</div>
+	<div class="row bottom-row">
+		<div class="col-md-6 second-left box">
+			<%= image_tag('cat2', class: "img-fluid") %>
+		</div>
+		<a href="/about"><div class="col-md-6 second-right fourth-right box">
+			<h1 class="video-header">About / Contact</h1>
+		</div></a>
+	</div>
+</div>
+
+<script type="text/javascript">
+	  $(document).on('turbolinks:load',function(){
+	  	$('.first-right').hover(
+		  function() {
+		    $(this).find('img').attr("src", "<%= image_path('cat2') %>")
+		  }, function() {
+		    $(this).find('img').attr("src", "<%= image_path('cat1') %>")
+		  }
+		);
+	  	$('.second-left').hover(
+		  function() {
+		    $(this).find('img').attr("src", "<%= image_path('cat1') %>")
+		  }, function() {
+		    $(this).find('img').attr("src", "<%= image_path('cat2') %>")
+		  }
+		);
+	  });
+</script>

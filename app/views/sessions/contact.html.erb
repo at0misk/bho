@@ -1,0 +1,80 @@
+<style type="text/css">
+	.about-container{
+		padding-top: 0px;
+	}
+	.right-col{
+		background-color: #fff2e8;
+	}
+	.row .col-sm-6{
+		min-height: 500px;
+	}
+	.img-fluid{
+		height: auto;
+		width: 100%;
+	}
+	.right-col p{
+		text-align: justify;
+	}
+	.right-col h2{
+		text-align: center;
+	}
+	.right-col .row{
+		padding: 0px 15px;
+		padding-top: 15px;
+	}
+	.text-area-form-group{
+		padding-right: 0px;
+	}
+	.text-row{
+		padding-right: 0px !important;
+	}
+	.btn-col{
+		text-align: center;
+	}
+	h3{
+		text-align: center;
+		color: #777;
+	}
+	.btn-contact{
+		width: 100px;
+	}
+</style>
+<div class="container about-container">
+	<div class="row">
+		<div class="col-sm-6 right-col">
+			<h3>Contact</h3>
+			<form action="/contact" method="post" class="form-horizontal" id="new-subscription-form">
+			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+			<div class="row">
+				<div class="form-group">
+				    <div class="col-sm-12">
+				        <input name="name" type="text" class="form-control" id="name" required placeholder="name"/>
+				    </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+				    <div class="col-sm-12">
+				        <input name="Email" type="text" class="form-control" id="email" required placeholder="email"/>
+				    </div>
+				</div>
+			</div>
+			<div class="row text-row">
+				<div class="form-group col-sm-12 text-area-form-group">
+				    <textarea class="form-control" name="message" rows="8" required></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+				    <div class="col-sm-12 btn-col">
+				        <button class="btn btn-contact">Send</button>
+				    </div>
+				</div>
+			</div>
+			</form>
+		</div>
+		<div class="col-sm-6">
+			<%= image_tag('cat3', class: "img-fluid") %>
+		</div>
+	</div>
+</div>
