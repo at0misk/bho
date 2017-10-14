@@ -1,9 +1,9 @@
 <style type="text/css">
 	.box{
-		height: 350px;
+		min-height: 400px;
 	}
 	.first-left{
-		background-color: #f0e3f1;
+		background-color: #fae2e4;
 	    text-align: center;
 	    padding-top: 125px;
       -moz-transition: all 0.4s;
@@ -33,55 +33,121 @@
 	.first-right img{
 		width: 100%;
 		height: auto;
-		min-height: 350px;
+		min-height: 400px;
 	}
 	.second-left img{
 		width: 100%;
 		height: auto;
-		min-height: 350px;
+		min-height: 400px;
+	}
+	.about-img{
+		padding: 0px;
+	}
+	.about-img img{
+		width: 100%;
+		height: auto;
+		min-height: 400px;
+	}
+	.contact-img{
+		padding: 0px;
+	}
+	.contact-img img{
+		width: 100%;
+		height: auto;
+		min-height: 400px;
 	}
 	.bottom-row{
 		margin-top: 50px;
 	}
-	.third-left{
-		background-color: #ffe0e3 !important;
-	}
 	.fourth-right{
 		background-color: #e5d8e1 !important;
 	}
+	.text-8-right{
+		text-align: right;
+	}
+	.text-8-left{
+		text-align: left;
+	}
+	h1{
+		font-size: 72px;
+		font-style: italic;
+		color: white;
+		font-weight: bold;
+	}
+	.box-copy{
+		font-size: 24px;
+		font-family: 'Fanwood Text', serif;
+	}
+	.about-box{
+		background-color: #e8e5fc;
+	}
+	.gallery-box{
+		background-color: #f2d7e3;
+	}
+	.bottom-row{
+		margin-bottom: 50px;
+	}
 </style>
-<div class="container-fluid" data-no-turbolinks="true">
+<div class="container-fluid lower-cont" data-no-turbolinks="true">
 	<div class="row">
+		<div class="col-md-6 first-right box">
+			<%= image_tag('Video_01', class: "img-fluid") %>
+		</div>
 		<a href="/videos"><div class="col-md-6 first-left box">
-			<h1 class="video-header">Videos</h1>
+			<div class="col-sm-2">
+			</div>
+			<div class="col-sm-8 text-8-right">
+				<h1 class="video-header">Videos.</h1>
+				<p class="box-copy">Follow along as I teach you how to fold your clothing like a champion with my original Upright Folding technique!</p>
+			</div>
+			<div class="col-sm-2">
+			</div>
 		</div></a>
-		<div class="col-md-6 first-right box">
-			<%= image_tag('cat1', class: "img-fluid") %>
-		</div>
 	</div>
 	<div class="row bottom-row">
+		<a href="/gallery"><div class="col-md-6 second-right box gallery-box">
+			<div class="col-sm-2">
+			</div>
+			<div class="col-sm-8 text-8-left">
+				<h1 class="video-header">Gallery.</h1>
+				<p class="box-copy">I'd like to share with you a sampling of the spaces I've recently designed and built out.</p>
+			</div>
+			<div class="col-sm-2">
+			</div>
+		</div></a>
 		<div class="col-md-6 second-left box">
-			<%= image_tag('cat2', class: "img-fluid") %>
-		</div>
-		<a href="/gallery"><div class="col-md-6 second-right box">
-			<h1 class="video-header">Gallery</h1>
-		</div></a>
-	</div>
-	<div class="row bottom-row">
-		<a href="/shop"><div class="col-md-6 first-left third-left box">
-			<h1 class="video-header">Shop</h1>
-		</div></a>
-		<div class="col-md-6 first-right box">
-			<%= image_tag('cat1', class: "img-fluid") %>
+			<%= image_tag('Gallery_01', class: "img-fluid") %>
 		</div>
 	</div>
 	<div class="row bottom-row">
-		<div class="col-md-6 second-left box">
-			<%= image_tag('cat2', class: "img-fluid") %>
+		<div class="col-md-6 about-img box">
+			<%= image_tag('About_01', class: "img-fluid") %>
 		</div>
-		<a href="/about"><div class="col-md-6 second-right fourth-right box">
-			<h1 class="video-header">About / Contact</h1>
+		<a href="/about"><div class="col-md-6 first-left third-left box about-box">
+			<div class="col-sm-2">
+			</div>
+			<div class="col-sm-8 text-8-right">
+				<h1 class="video-header">About.</h1>
+				<p class="box-copy">Who I am & why I do what I do.</p>
+			</div>
+			<div class="col-sm-2">
+			</div>
 		</div></a>
+	</div>
+	<div class="row bottom-row">
+		<a href="/contact"><div class="col-md-6 second-right fourth-right box">
+			<div class="col-sm-2">
+			</div>
+			<div class="col-sm-8 text-8-left">
+				<h1 class="video-header">Contact.</h1>
+				<p class="box-copy">For inquiries, bookings, or just to say "Hi!"</p>
+			</div>
+			<div class="col-sm-2">
+			</div>
+		</div></a>
+		<div class="col-md-6 contact-img box">
+			<%= image_tag('Contact_02', class: "img-fluid") %>
+		</div>
 	</div>
 </div>
 
@@ -89,16 +155,30 @@
 	  $(document).on('turbolinks:load',function(){
 	  	$('.first-right').hover(
 		  function() {
-		    $(this).find('img').attr("src", "<%= image_path('cat2') %>")
+		    $(this).find('img').attr("src", "<%= image_path('Video_02') %>")
 		  }, function() {
-		    $(this).find('img').attr("src", "<%= image_path('cat1') %>")
+		    $(this).find('img').attr("src", "<%= image_path('Video_01') %>")
 		  }
 		);
 	  	$('.second-left').hover(
 		  function() {
-		    $(this).find('img').attr("src", "<%= image_path('cat1') %>")
+		    $(this).find('img').attr("src", "<%= image_path('Gallery_02') %>")
 		  }, function() {
-		    $(this).find('img').attr("src", "<%= image_path('cat2') %>")
+		    $(this).find('img').attr("src", "<%= image_path('Gallery_01') %>")
+		  }
+		);
+		$('.about-img').hover(
+		  function() {
+		    $(this).find('img').attr("src", "<%= image_path('About_02') %>")
+		  }, function() {
+		    $(this).find('img').attr("src", "<%= image_path('About_01') %>")
+		  }
+		);
+		$('.contact-img').hover(
+		  function() {
+		    $(this).find('img').attr("src", "<%= image_path('Contact_01') %>")
+		  }, function() {
+		    $(this).find('img').attr("src", "<%= image_path('Contact_02') %>")
 		  }
 		);
 	  });

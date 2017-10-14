@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BeverlyHills</title>
+    <title>Beverly Hills Organizer</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,18 +15,25 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Fanwood+Text|Lora|Montserrat|Quattrocento|Roboto|Source+Sans+Pro" rel="stylesheet">
 	<style type="text/css">
 		.upper-nav{
-			height: 70px;
+			height: 50px;
 			text-align: center;
-			background-color: #ffe0e3;
+			background-color: #fdf2e9;
 		}
 		.logo{
 			margin-bottom: 15px;
+			font-family: 'Quattrocento', serif;
+			/*font-size: 18px;*/
+			font-weight: bold;
+			color: black;
+			font-size: 22px;
+			margin-top: 15px;
 		}
 		.shopping{
 			position: absolute;
-		    top: 25px;
+		    top: 20px;
 		    right: 15px;
 		    font-size: 18px;
 		}
@@ -37,7 +44,8 @@
 		    margin-bottom: 0px;
 		}
 		.nav li{
-			margin: 0px 20px;
+			font-family: 'Source Sans Pro', sans-serif;
+			/*margin: 0px 20px;*/
 		}
 		.footer-container{
 			padding-top: 20px;
@@ -52,6 +60,7 @@
 			float: right;
 			margin-top: 10px;
 			margin-right: 45px;
+			font-family: 'Source Sans Pro', sans-serif;
 		}
 		a{
 	      -moz-transition: all 0.4s;
@@ -111,19 +120,100 @@ fieldset[disabled] .btn-contact.active {
   border-color: #C4C4C4; 
 } 
  
+.btn-shop { 
+  color: #000000; 
+  background-color: #EEE2F5; 
+  border-color: #EEE2F5; 
+} 
+ 
+.btn-shop:hover, 
+.btn-shop:focus, 
+.btn-shop:active, 
+.btn-shop.active, 
+.open .dropdown-toggle.btn-shop { 
+  color: #000000; 
+  background-color: #EEE2F5; 
+  border-color: #EEE2F5; 
+} 
+ 
+.btn-shop:active, 
+.btn-shop.active, 
+.open .dropdown-toggle.btn-shop { 
+  background-image: none; 
+} 
+ 
+.btn-shop.disabled, 
+.btn-shop[disabled], 
+fieldset[disabled] .btn-shop, 
+.btn-shop.disabled:hover, 
+.btn-shop[disabled]:hover, 
+fieldset[disabled] .btn-shop:hover, 
+.btn-shop.disabled:focus, 
+.btn-shop[disabled]:focus, 
+fieldset[disabled] .btn-shop:focus, 
+.btn-shop.disabled:active, 
+.btn-shop[disabled]:active, 
+fieldset[disabled] .btn-shop:active, 
+.btn-shop.disabled.active, 
+.btn-shop[disabled].active, 
+fieldset[disabled] .btn-shop.active { 
+  background-color: #EEE2F5; 
+  border-color: #EEE2F5; 
+} 
+ 
+.btn-shop .badge { 
+  color: #EEE2F5; 
+  background-color: #000000; 
+}
+
 .btn-contact .badge { 
   color: #FFFFFF; 
   background-color: #8F8F8F; 
+}
+
+.color-5{
+	background-color: #fdf2e9;
+}
+.lower-cont{
+	margin-top: 170px;
+}
+.btn-shop{
+	font-family: 'Lora', serif;
+	font-weight: bold;
+	font-style: italic;
+	float: right;
+	margin-top: 5px;
+}
+.linda{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+    display: inline-block;
+    margin: 0px auto;
+    /*text-align: center;*/
+    margin-top: 5px;
+    color: #777;
+}
+.linda-col{
+	text-align: center;
+}
+.navbar-collapse{
+	padding-top: 5px;
 }
 	</style>
   </head>
 
   <body>
-      <nav class="navbar navbar-default">
+      <nav class="navbar navbar-fixed-top">
         <div class="container-fluid">
         <div class="upper-nav row">
-        	<a href="/"><h3 class="logo">LK/BHO LOGO</h3></a>
-        	<span class="shopping"><a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></span>
+        	<div class="col-sm-4">
+        	</div>
+        	<div class="col-sm-4">
+	        	<a href="/"><h3 class="logo">The Beverly Hills Organizer</h3></a>
+	        </div>
+	        <div class="col-sm-4">
+	        </div>
         </div>
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -134,19 +224,28 @@ fieldset[disabled] .btn-contact.active {
             </button>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav" data-no-turbolinks="true">
-              <li><a href="/videos">Videos</a></li>
-              <li><a href="/gallery">Gallery</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/contact">Contact</a></li>
-              <li><a href="/shop">Shop</a></li>
+          	<div class="col-sm-4">
+	            <ul class="nav navbar-nav" data-no-turbolinks="true">
+	              <li class="videos-nav"><a href="/videos">Videos</a></li>
+	              <li class="gallery-nav"><a href="/gallery">Gallery</a></li>
+	              <li class="about-nav"><a href="/about">About</a></li>
+	              <li class="contact-nav"><a href="/contact">Contact</a></li>
+	              <li class="shop-nav"><a href="/shop">Shop</a></li>
+	            </ul>
+	        </div>
+	        <div class="col-sm-4 linda-col">
+	            <h2 class="linda">Linda Koopersmith</h2>
+	        </div>
+	        <div class="col-sm-4">
+	          	<button class="btn btn-shop">Shop Products</button>
+	        </div>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
     <%= yield %>
-    <footer class="footer">
+    <footer class="footer color-5">
       <div class="container footer-container">
-        <p class="text-muted"><a href="#"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a><a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a><span class="copyright">&copy; 2017 Linda Coopersmith</span></p>
+        <p class="text-muted"><a href="#"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a><a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a><span class="copyright">&copy; 2017 Linda Koopersmith</span></p>
       </div>
     </footer>
   </body>

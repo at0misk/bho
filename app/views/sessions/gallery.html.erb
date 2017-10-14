@@ -8,16 +8,51 @@
 	.gallery-container{
 		padding-top: 15px !important;
 	}
+	.aspire{
+		text-align: center;
+		font-style: italic;
+		font-weight: bold;
+		color: #f2d7e3;
+		font-size: 62px;
+	}
+	.gallery-nav{
+		font-style: italic;
+	}
+	.fotorama-row{
+		margin-bottom: 50px;
+		margin-top: 10px;
+	}
+	.lower-cont{
+		/*margin-top: 80px;*/
+	}
 </style>
-<div class="container gallery-container">
-	<div class="row">
+<div class="container gallery-container lower-cont">
+	<div class="row aspire-row">
+		<div class="col-sm-8">
+		</div>
+		<div class="col-sm-4">
+			<h1 class="aspire">aspire.</h1>
+		</div>
+	</div>
+	<div class="row fotorama-row">
 		<div class="col-sm-2">
 		</div>
 			<div class="foto-col col-sm-8">
-				<div class="fotorama" data-height="500" data-nav="thumbs">
-				  <%= image_tag('cat1') %>
-				  <%= image_tag('cat2') %>
-				  <%= image_tag('cat3') %>
+				<div class="fotorama" data-nav="thumbs" data-width="100%" data-ratio="800/600">
+				  <%= image_tag('Closet_002-1') %>
+				  <%= image_tag('Closet_002-2') %>
+				  <%= image_tag('Closet_002-3') %>
+				  <%= image_tag('Closet_001') %>
+				  <%= image_tag('Closet_003-1') %>
+				  <%= image_tag('Closet_003-2') %>
+				  <%= image_tag('Closet_004-1') %>
+				  <%= image_tag('Closet_004-2') %>
+				  <%= image_tag('Closet_004-3') %>
+				  <%= image_tag('Closet_004-4') %>
+				  <%= image_tag('Install_001-1') %>
+  				  <%= image_tag('Install_001-2') %>
+				  <%= image_tag('Install_003') %>
+				  <%= image_tag('Install_004') %>
 				</div>
 			</div>
 		<div class="col-sm-2">
