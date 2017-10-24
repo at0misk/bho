@@ -64,6 +64,13 @@
 	    color: #777;
 	    padding: 5px 40px;
 	}
+	.success-col{
+		text-align: center;
+		color: #777;
+	}
+	.success-col h3{
+		margin-top: 0px;
+	}
 </style>
 <div class="container about-container lower-cont">
 	<div class="row hello-row">
@@ -73,6 +80,13 @@
 			<h1 class="hello">hello.</h1>
 		</div>
 	</div>
+	<% if flash[:success] %>
+		<div class="row success-row">
+			<div class="col-sm-12 success-col">
+				<h3><%= flash[:success] %></h3>
+			</div>
+		</div>
+	<% end %>
 	<div class="row">
 		<div class="col-sm-3">
 		</div>
@@ -89,7 +103,7 @@
 			<div class="row">
 				<div class="form-group">
 				    <div class="col-sm-12">
-				        <input name="Email" type="text" class="form-control" id="email" required placeholder="email"/>
+				        <input name="email" type="text" class="form-control" id="email" required placeholder="email"/>
 				    </div>
 				</div>
 			</div>

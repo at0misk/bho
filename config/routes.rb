@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   	get '/videos' => 'sessions#videos'
   	get '/about' => 'sessions#about'
   	get '/contact' => 'sessions#contact'
+  	post '/contact' => 'sessions#mail'
   	get '/shop' => 'sessions#shop'
 end

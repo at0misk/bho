@@ -1,11 +1,11 @@
 <style type="text/css">
 	.box{
-		min-height: 500px;
+		/*min-height: 500px;*/
 	}
 	.first-left{
 		background-color: #fae2e4;
 	    text-align: center;
-	    padding-top: 175px;
+	    padding-top: 7%;
       -moz-transition: all 0.4s;
       -webkit-transition: all 0.4s;
       transition: all 0.4s;
@@ -16,7 +16,7 @@
 	.second-right{
 		background-color: #fff2e8;
 	    text-align: center;
-	    padding-top: 175px;
+	    padding-top: 7%;
       -moz-transition: all 0.4s;
       -webkit-transition: all 0.4s;
       transition: all 0.4s;
@@ -33,12 +33,12 @@
 	.first-right img{
 		width: 100%;
 		height: auto;
-		min-height: 500px;
+		/*min-height: 500px;*/
 	}
 	.second-left img{
 		width: 100%;
 		height: auto;
-		min-height: 500px;
+		/*min-height: 500px;*/
 	}
 	.about-img{
 		padding: 0px;
@@ -46,7 +46,7 @@
 	.about-img img{
 		width: 100%;
 		height: auto;
-		min-height: 500px;
+		/*min-height: 500px;*/
 	}
 	.contact-img{
 		padding: 0px;
@@ -54,13 +54,13 @@
 	.contact-img img{
 		width: 100%;
 		height: auto;
-		min-height: 500px;
+		/*min-height: 500px;*/
 	}
 	.bottom-row{
 		margin-top: 50px;
 	}
 	.fourth-right{
-		background-color: #e5d8e1 !important;
+		background-color: #eee2f5 !important;
 	}
 	.text-8-right{
 		text-align: right;
@@ -87,11 +87,45 @@
 	.bottom-row{
 		margin-bottom: 50px;
 	}
+	.content-row-one{
+	    background-color: #fae2e4;
+	}
+	.content-row-two{
+		background-color: #f2d7e3;
+	}
+	.content-row-three{
+		background-color: #e8e5fc;
+	}
+	.content-row-four{
+		background-color: #eee2f5;
+	}
+	.mobile{
+		display: none;
+	}
+@media only screen and (min-width : 991px) and (max-width : 1205px) {
+	h1{
+		font-size: 57px;
+	}
+	.box-copy{
+		font-size: 18px;
+	}
+}
+@media only screen and (max-width : 991px) {
+	.desktop{
+		display: none;
+	}
+	.mobile{
+		display: block;
+	}
+	.box-copy{
+		margin-bottom: 60px;
+	}
+}
 </style>
 <div class="container-fluid lower-cont" data-no-turbolinks="true">
-	<div class="row">
+	<div class="row content-row-one desktop">
 		<div class="col-md-6 first-right box">
-			<%= image_tag('Video_01', class: "img-fluid") %>
+			<%= image_tag('Video_02', class: "img-fluid") %>
 		</div>
 		<a href="/videos"><div class="col-md-6 first-left box">
 			<div class="col-sm-2">
@@ -104,7 +138,22 @@
 			</div>
 		</div></a>
 	</div>
-	<div class="row bottom-row">
+	<div class="row content-row-one mobile">
+		<a href="/videos"><div class="col-md-6 first-left box">
+			<div class="col-sm-2">
+			</div>
+			<div class="col-sm-8 text-8-right">
+				<h1 class="video-header">Videos.</h1>
+				<p class="box-copy">Follow along as I teach you how to fold your clothing like a champion with my original Upright Folding technique!</p>
+			</div>
+			<div class="col-sm-2">
+			</div>
+		</div></a>
+		<div class="col-md-6 first-right box">
+			<%= image_tag('Video_02', class: "img-fluid") %>
+		</div>
+	</div>
+	<div class="row bottom-row content-row-two">
 		<a href="/gallery"><div class="col-md-6 second-right box gallery-box">
 			<div class="col-sm-2">
 			</div>
@@ -119,7 +168,7 @@
 			<%= image_tag('Gallery_01', class: "img-fluid") %>
 		</div>
 	</div>
-	<div class="row bottom-row">
+	<div class="row bottom-row content-row-three desktop">
 		<div class="col-md-6 about-img box">
 			<%= image_tag('About_01', class: "img-fluid") %>
 		</div>
@@ -134,7 +183,22 @@
 			</div>
 		</div></a>
 	</div>
-	<div class="row bottom-row">
+	<div class="row bottom-row content-row-three mobile">
+		<a href="/about"><div class="col-md-6 first-left third-left box about-box">
+			<div class="col-sm-2">
+			</div>
+			<div class="col-sm-8 text-8-right">
+				<h1 class="video-header">About.</h1>
+				<p class="box-copy">Who I am & why I do what I do.</p>
+			</div>
+			<div class="col-sm-2">
+			</div>
+		</div></a>
+		<div class="col-md-6 about-img box">
+			<%= image_tag('About_01', class: "img-fluid") %>
+		</div>
+	</div>
+	<div class="row bottom-row content-row-four">
 		<a href="/contact"><div class="col-md-6 second-right fourth-right box">
 			<div class="col-sm-2">
 			</div>
@@ -155,9 +219,9 @@
 	  $(document).on('turbolinks:load',function(){
 	  	$('.first-right').hover(
 		  function() {
-		    $(this).find('img').attr("src", "<%= image_path('Video_02') %>")
-		  }, function() {
 		    $(this).find('img').attr("src", "<%= image_path('Video_01') %>")
+		  }, function() {
+		    $(this).find('img').attr("src", "<%= image_path('Video_02') %>")
 		  }
 		);
 	  	$('.second-left').hover(

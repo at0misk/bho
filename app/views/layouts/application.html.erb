@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Beverly Hills Organizer</title>
+    <title>The Beverly Hills Organizer</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -16,6 +16,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Fanwood+Text|Lora|Montserrat|Quattrocento|Roboto|Source+Sans+Pro" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style type="text/css">
 		.upper-nav{
 			height: 50px;
@@ -122,8 +123,8 @@ fieldset[disabled] .btn-contact.active {
  
 .btn-shop { 
   color: #000000; 
-  background-color: #EEE2F5; 
-  border-color: #EEE2F5; 
+  background-color: #f2d7e3; 
+  border-color: #f2d7e3; 
 } 
  
 .btn-shop:hover, 
@@ -132,8 +133,8 @@ fieldset[disabled] .btn-contact.active {
 .btn-shop.active, 
 .open .dropdown-toggle.btn-shop { 
   color: #000000; 
-  background-color: #EEE2F5; 
-  border-color: #EEE2F5; 
+  background-color: #f2d7e3; 
+  border-color: #f2d7e3; 
 } 
  
 .btn-shop:active, 
@@ -157,12 +158,12 @@ fieldset[disabled] .btn-shop:active,
 .btn-shop.disabled.active, 
 .btn-shop[disabled].active, 
 fieldset[disabled] .btn-shop.active { 
-  background-color: #EEE2F5; 
-  border-color: #EEE2F5; 
+  background-color: #f2d7e3; 
+  border-color: #f2d7e3; 
 } 
  
 .btn-shop .badge { 
-  color: #EEE2F5; 
+  color: #f2d7e3; 
   background-color: #000000; 
 }
 
@@ -201,10 +202,55 @@ fieldset[disabled] .btn-shop.active {
 .navbar-collapse{
 	padding-top: 5px;
 }
+.navbar-toggle{
+	background-color: #fdf2e9;
+    border: 1px solid #777;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.icon-bar{
+	background-color: #777;
+}
+.mobile-bot{
+	display: none;
+}
+@media only screen and (max-width : 767px) {
+	.desktop-bot{
+		display: none;
+	}
+	.mobile-bot{
+		display: block;
+		text-align: center;
+	}
+	.btn-shop{
+		float: unset;
+		margin: 15px auto;
+		display: block;
+		text-align: center;
+	}
+	.linda-col{
+		margin-top: 5px;
+	}
+	.fa{
+		margin: 0px 15px;
+	}
+	.copy-right{
+		margin-right: 15px;
+	}
+	.navbar-toggle{
+		padding: 7px;
+		margin-right: 10px;
+	}
+}
+.wrapper{
+	overflow-x:hidden;
+}
 	</style>
   </head>
 
   <body>
+  <div class="wrapper">
       <nav class="navbar navbar-fixed-top">
         <div class="container-fluid">
         <div class="upper-nav row">
@@ -224,6 +270,10 @@ fieldset[disabled] .btn-shop.active {
               <span class="icon-bar"></span>
             </button>
           </div>
+	        <div class="col-sm-12 linda-col mobile-bot">
+	            <h2 class="linda">Linda Koopersmith</h2>
+	          	<button class="btn btn-shop">Shop Products</button>
+	        </div>
           <div id="navbar" class="navbar-collapse collapse">
           	<div class="col-sm-4">
 	            <ul class="nav navbar-nav" data-no-turbolinks="true">
@@ -231,13 +281,12 @@ fieldset[disabled] .btn-shop.active {
 	              <li class="gallery-nav"><a href="/gallery">Gallery</a></li>
 	              <li class="about-nav"><a href="/about">About</a></li>
 	              <li class="contact-nav"><a href="/contact">Contact</a></li>
-	              <li class="shop-nav"><a href="/shop">Shop</a></li>
 	            </ul>
 	        </div>
-	        <div class="col-sm-4 linda-col">
+	        <div class="col-sm-4 linda-col desktop-bot">
 	            <h2 class="linda">Linda Koopersmith</h2>
 	        </div>
-	        <div class="col-sm-4">
+	        <div class="col-sm-4 desktop-bot">
 	          	<button class="btn btn-shop">Shop Products</button>
 	        </div>
           </div><!--/.nav-collapse -->
@@ -249,5 +298,6 @@ fieldset[disabled] .btn-shop.active {
         <p class="text-muted"><a href="#"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a><a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a><span class="copyright">&copy; 2017 Linda Koopersmith</span></p>
       </div>
     </footer>
+  </div>
   </body>
 </html>
